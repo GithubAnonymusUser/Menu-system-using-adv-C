@@ -1,0 +1,1183 @@
+/*Names:"MEMON FAIZAN"; */
+#include<stdlib.h>
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+struct income
+{
+	  char  a[30];//="Nothing";
+	  char	b[30];//="Nothing";
+	  char  c[30];//="Nothing";
+	  char  d[30];//="Nothing";
+	  char  e[30];//="Nothing";
+	  char  f[30];//="Nothing";
+	  float g;
+	  float h;
+	  float i;
+	  float j;
+	  float k;
+	  float l;
+};
+struct expense
+{
+	  char  a1[30];//="Nothing";
+	  char	b1[30];//="Nothing";
+	  char  c1[30];//="Nothing";
+	  char  d1[30];//="Nothing";
+	  char  e1[30];//="Nothing";
+	  char  f1[30];//="Nothing";
+	 float g1;
+	 float h1;
+	 float i1;
+	 float j1;
+	 float k1;
+	 float l1;
+};
+//Globle variables diclerations
+	struct income i;
+	struct expense e;
+	static int y;
+	static int x;
+	static float in,ex,save;
+//this function make for login
+int login()
+{
+		int a,i;
+		textbackground(4);
+		textcolor(BLACK + BLINK);
+		clrscr();
+		printf("------------------\n");
+		printf("| Password       |\n");
+		printf("------------------\n");
+		scanf("%4d",&a);
+		printf("------------------\n");
+		for(i=0;i<=10;i++)
+		{
+			if(a==7869)
+			{
+				return 0;
+
+			}
+			else
+			{
+				printf("Wrong password\n");
+				printf("try again");
+				exit(0);
+			}
+		}
+}
+//this funcion made for manue
+int choice()
+{
+	int cho,emoji=2;
+	textbackground(6);
+	textcolor(BLACK);
+	clrscr();
+
+	printf("\t\t\t\t %c %c %c",emoji+1,emoji+1,emoji+1);
+	printf("\n\t\t=======================================");
+	printf("\n\t\t%c You have been succesfully logged in %c",emoji,emoji);
+	printf("\n\t\t=======================================");
+	printf("\n\t\t|     %c choose any one function %c     |",emoji,emoji);
+	printf("\n\t\t=======================================");
+	printf("\n\t\t|  1 : Enter Data then choose 1.      |");
+	printf("\n\t\t|  2 : insert Data then choose 2.     |");
+	printf("\n\t\t|  3 : print summery then choose 3.   |");
+	printf("\n\t\t|  4 : search income then choose 4.   |");
+	printf("\n\t\t|  5 : search expence then choose 5.  |");
+	printf("\n\t\t|  6 : Delete income then choose 6.   |");
+	printf("\n\t\t|  7 : Delete expence then choose 7.  |");
+	printf("\n\t\t|  8 : Exit then choose 8.            |");
+	printf("\n\t\t=======================================");
+	printf("\n\t\t\t\t %c %c %c",emoji+1,emoji+1,emoji+1);
+	printf("\n\t\t| %c Enter your choice:",emoji);
+	scanf("%d",&cho);
+	return cho;
+}
+/*this function make for to take
+ source of income and amount from
+ the user */
+void income()
+{
+	FILE *fp;
+	clrscr();
+	fp=fopen("income.txt","w");
+	if(fp==NULL)
+	{
+		printf("\nFile not open");
+		return;
+	}
+	else
+	{
+		printf("You have been succesfully logged in");
+	}
+		printf("\n=====================================");
+
+		printf("\nhow many your income source:");
+		scanf("%d",&x);
+		printf("\n\n\t\t   =====================================");
+		printf("\n\t\t   Enter the source of income and amount");
+		printf("\n\t\t   =====================================");
+		printf("\n\t\t   -------------------------------------   ");
+		printf("\n\t\t   Source of income    |\tAmount");
+		printf("\n\t\t   -------------------------------------   ");
+	 switch(x)
+	{
+		case 1: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+		case 2: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+
+		case 3: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			printf("\n\t\t   ");
+			scanf("%s",i.c);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.i);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+
+		case 4: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			printf("\n\t\t   ");
+			scanf("%s",i.c);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.i);
+			printf("\n\t\t   ");
+			scanf("%s",i.d);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.j);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+		case 5: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			printf("\n\t\t   ");
+			scanf("%s",i.c);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.i);
+			printf("\n\t\t   ");
+			scanf("%s",i.d);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.j);
+			printf("\n\t\t   ");
+			scanf("%s",i.e);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.k);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+
+		case 6: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			printf("\n\t\t   ");
+			scanf("%s",i.c);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.i);
+			printf("\n\t\t   ");
+			scanf("%s",i.d);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.j);
+			printf("\n\t\t   ");
+			scanf("%s",i.e);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.k);
+			printf("\n\t\t   ");
+			scanf("%s",i.f);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.l);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+
+		default:printf("\n\n\n\t\t   -------------------------------------   ");
+			printf("\n\t\t   !!! Only 6 source of income valid !!!");
+			printf("\n\t\t   -------------------------------------   ");
+	}
+	fclose(fp);
+	in=i.g+i.h+i.i+i.j+i.k+i.l;
+}
+//function for  to take way of expenses and amount
+void expenses()
+{
+	FILE *fp;
+	clrscr();
+	fp=fopen("expence.txt","w");
+	if(fp==NULL)
+	{
+		printf("\nFile not open");
+		return;
+	}
+	else
+	{
+		printf("==================================");
+		printf("\nhow many your way of expenses:");
+		scanf("%d",&y);
+	}
+		printf("==================================");
+		printf("\n\n\t\t   =====================================");
+		printf("\n\t\t   Enter the way of expenses and amount");
+		printf("\n\t\t   =====================================");
+		printf("\n\t\t   -------------------------------------   ");
+		printf("\n\t\t   Way of expenses    |\tAmount");
+		printf("\n\t\t   -------------------------------------   ");
+	switch(y)
+	{
+		case 1: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+		case 2: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		case 3: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			printf("\n\t\t   ");
+			scanf("%s",e.c1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.i1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		case 4: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			printf("\n\t\t   ");
+			scanf("%s",e.c1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.i1);
+			printf("\n\t\t   ");
+			scanf("%s",e.d1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.j1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		case 5: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			printf("\n\t\t   ");
+			scanf("%s",e.c1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.i1);
+			printf("\n\t\t   ");
+			scanf("%s",e.d1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.j1);
+			printf("\n\t\t   ");
+			scanf("%s",e.e1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.k1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		case 6: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			printf("\n\t\t   ");
+			scanf("%s",e.c1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.i1);
+			printf("\n\t\t   ");
+			scanf("%s",e.d1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.j1);
+			printf("\n\t\t   ");
+			scanf("%s",e.e1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.k1);
+			printf("\n\t\t   ");
+			scanf("%s",e.f1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.l1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		default:printf("\n\n\n\t\t   -------------------------------------   ");
+			printf("\n\t\t   !!! Only 6 source of income valid !!!");
+			printf("\n\t\t   -------------------------------------   ");
+	}
+	fclose(fp);
+	ex=e.g1+e.h1+e.i1+e.j1+e.k1+e.l1;
+}
+//this function made for print monthly budget
+void printie(float save)
+{
+	int m,ye,temp;
+	char enter;
+	FILE *fp,*fp1;
+	clrscr();
+	printf("Enter the month:");
+	scanf("%d",&m);
+	printf("Enter the year:");
+	scanf("%d",&ye);
+	clrscr();
+	fp=fopen("income.txt","r");
+	fp1=fopen("expence.txt","r");
+	if(fp==NULL)
+	{
+		if(fp1==NULL)
+		{
+			printf("\nfile is not open");
+		}
+	}
+	else
+	{
+		printf("\n\n\t   ===============================================================");
+		printf("\n\t\t\t\t  MONTHLY BUDGET");
+	}
+	switch(m)
+	{
+		case 1: printf("\n\t\t\t\t  JANUARY - %d",ye);
+			break;
+		case 2: printf("\n\t\t\t\t FEBRUARY - %d",ye);
+			break;
+		case 3: printf("\n\t\t\t\t   MARCH - %d",ye);
+			break;
+		case 4: printf("\n\t\t\t\t   APRIL - %d",ye);
+			break;
+		case 5: printf("\n\t\t\t\t    MAY - %d",ye);
+			break;
+		case 6: printf("\n\t\t\t\t   JUNE - %d",ye);
+			break;
+		case 7: printf("\n\t\t\t\t   JULY - %d",ye);
+			break;
+		case 8: printf("\n\t\t\t\t  AUGUST - %d",ye);
+			break;
+		case 9:  printf("\n\t\t\t\t SEPTEMBER - %d",ye);
+			 break;
+		case 10: printf("\n\t\t\t\t  OCTOBER - %d",ye);
+			 break;
+		case 11: printf("\n\t\t\t\t NOVEMBER - %d",ye);
+			 break;
+		case 12: printf("\n\t\t\t\t DECEMBER - %d",ye);
+			 break;
+		default: printf("\n\t\t   Enter the valid month");
+	}
+	printf("\n\t   ===============================================================");
+	printf("\n\t   ---------------------------------------------------------------");
+	printf("\n\t    Income\t\t Amount | Expenses\t\t   Amount");
+	printf("\n\t   ---------------------------------------------------------------");
+	if(x<y)
+		temp=y;
+	else
+		temp=x;
+	while(1)
+	{
+		fread(&i,sizeof(struct income),1,fp);
+		fread(&e,sizeof(struct expense),1,fp1);
+		if(feof(fp))
+		break;
+	switch(temp)
+	{
+		case 1: printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+			break;
+
+		case 2: if(x<y)
+			{
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				break;
+			}
+			else
+			{
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t   %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t     %.2f",i.b,i.h,e.b1,e.h1);
+				break;
+			}
+
+		case 3: if(x<y)
+			{
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.c,i.i,e.c1,e.i1);
+				break;
+			}
+			else
+			{
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.c,i.i,e.c1,e.i1);
+				break;
+			}
+		case 4: if(x<y)
+			{
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.c,i.i,e.c1,e.i1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.d,i.j,e.d1,e.j1);
+				break;
+			}
+			else
+			{
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.c,i.i,e.c1,e.i1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.d,i.j,e.d1,e.j1);
+				break;
+			}
+
+		case 5: if(x<y)
+			{
+
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.c,i.i,e.c1,e.i1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.d,i.j,e.d1,e.j1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.e,i.k,e.e1,e.k1);
+				break;
+			}
+			else
+			{
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.c,i.i,e.c1,e.i1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.d,i.j,e.d1,e.j1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.e,i.k,e.e1,e.k1);
+				break;
+			}
+		case 6: if(x<y)
+			{
+
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.c,i.i,e.c1,e.i1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.d,i.j,e.d1,e.j1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.e,i.k,e.e1,e.k1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.f,i.l,e.f1,e.l1);
+				break;
+			}
+			else
+			{
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.a,i.g,e.a1,e.g1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.b,i.h,e.b1,e.h1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.c,i.i,e.c1,e.i1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.d,i.j,e.d1,e.j1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.e,i.k,e.e1,e.k1);
+				printf("\n\t    %s\t\t%8.2f| %s\t\t\t  %.2f",i.f,i.l,e.f1,e.l1);
+				break;
+			}
+
+		default:printf("\n\t\tonly 6 income and expenses valid");
+	}
+	}
+	fclose(fp);
+	fclose(fp1);
+	int smi=2;
+	printf("\n\t   ---------------------------------------------------------------");
+	printf("\n\t    Total Income\t%.2f| Total Expenses\t  %.2f",in,ex);
+	printf("\n\t   ---------------------------------------------------------------");
+	printf("\n\t   ============================");
+	printf("\n\t   | %c YOUR SAVINGS: %.2f |",smi,save);
+	printf("\n\t   ============================");
+	printf("\n\n\n       \t\t\t   %c Press Any Key and Exit %c",smi,smi);
+	scanf("%c",&enter);
+}
+//this funcion made for insert more income and expence
+void append()
+{
+	FILE *fp;
+	clrscr();
+	fp=fopen("income.txt","a");
+	if(fp==NULL)
+	{
+		printf("\nFile not open");
+		return;
+	}
+	else
+	{
+		printf("\n=====================================");
+
+		printf("\nhow many your income source:");
+		scanf("%d",&x);
+	}
+		printf("\n\n\t\t   =====================================");
+		printf("\n\t\t   Enter the source of income and amount");
+		printf("\n\t\t   =====================================");
+		printf("\n\t\t   -------------------------------------   ");
+		printf("\n\t\t   Source of income    |\tAmount");
+		printf("\n\t\t   -------------------------------------   ");
+	 switch(x)
+	{
+		case 1: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+		case 2: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+
+		case 3: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			printf("\n\t\t   ");
+			scanf("%s",i.c);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.i);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+
+		case 4: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			printf("\n\t\t   ");
+			scanf("%s",i.c);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.i);
+			printf("\n\t\t   ");
+			scanf("%s",i.d);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.j);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+		case 5: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			printf("\n\t\t   ");
+			scanf("%s",i.c);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.i);
+			printf("\n\t\t   ");
+			scanf("%s",i.d);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.j);
+			printf("\n\t\t   ");
+			scanf("%s",i.e);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.k);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+
+		case 6: printf("\n\t\t   ");
+			scanf("%s",i.a);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.g);
+			printf("\n\t\t   ");
+			scanf("%s",i.b);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.h);
+			printf("\n\t\t   ");
+			scanf("%s",i.c);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.i);
+			printf("\n\t\t   ");
+			scanf("%s",i.d);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.j);
+			printf("\n\t\t   ");
+			scanf("%s",i.e);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.k);
+			printf("\n\t\t   ");
+			scanf("%s",i.f);
+			printf("\t\t                       |\t");
+			scanf("%f",&i.l);
+			fwrite(&i,sizeof(struct income),1,fp);
+			break;
+
+		default:printf("\n\n\n\t\t   -------------------------------------   ");
+			printf("\n\t\t   !!! Only 6 source of income valid !!!");
+			printf("\n\t\t   -------------------------------------   ");
+	}
+	fclose(fp);
+	in=i.g+i.h+i.i+i.j+i.k+i.l;
+	clrscr();
+	fp=fopen("expence.txt","a");
+	if(fp==NULL)
+	{
+		printf("\nFile not open");
+		return;
+	}
+	else
+	{
+		printf("==================================");
+		printf("\nhow many your way of expenses:");
+		scanf("%d",&y);
+	}
+		printf("==================================");
+		printf("\n\n\t\t   =====================================");
+		printf("\n\t\t   Enter the way of expenses and amount");
+		printf("\n\t\t   =====================================");
+		printf("\n\t\t   -------------------------------------   ");
+		printf("\n\t\t   Way of expenses    |\tAmount");
+		printf("\n\t\t   -------------------------------------   ");
+	switch(y)
+	{
+		case 1: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+		case 2: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		case 3: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			printf("\n\t\t   ");
+			scanf("%s",e.c1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.i1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		case 4: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			printf("\n\t\t   ");
+			scanf("%s",e.c1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.i1);
+			printf("\n\t\t   ");
+			scanf("%s",e.d1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.j1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		case 5: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			printf("\n\t\t   ");
+			scanf("%s",e.c1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.i1);
+			printf("\n\t\t   ");
+			scanf("%s",e.d1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.j1);
+			printf("\n\t\t   ");
+			scanf("%s",e.e1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.k1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		case 6: printf("\n\t\t   ");
+			scanf("%s",e.a1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.g1);
+			printf("\n\t\t   ");
+			scanf("%s",e.b1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.h1);
+			printf("\n\t\t   ");
+			scanf("%s",e.c1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.i1);
+			printf("\n\t\t   ");
+			scanf("%s",e.d1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.j1);
+			printf("\n\t\t   ");
+			scanf("%s",e.e1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.k1);
+			printf("\n\t\t   ");
+			scanf("%s",e.f1);
+			printf("\t\t                       |\t");
+			scanf("%f",&e.l1);
+			fwrite(&e,sizeof(struct expense),1,fp);
+			break;
+
+		default:printf("\n\n\n\t\t   -------------------------------------   ");
+			printf("\n\t\t   !!! Only 6 source of income valid !!!");
+			printf("\n\t\t   -------------------------------------   ");
+	}
+	fclose(fp);
+	ex=e.g1+e.h1+e.i1+e.j1+e.k1+e.l1;
+}
+// this funciton made for search income
+void search()
+{
+	FILE *fp;
+	char copy[20];
+	int flag=0;
+	clrscr();
+	fp=fopen("income.txt","r");
+	if(fp==NULL)
+	{
+		printf("\nfile is not open");
+		return;
+	}
+	else
+	{
+	     printf("\nEnter the income source you want to search:");
+	     scanf("%s",copy);
+	}
+	while(1)
+	{
+		fread(&i,sizeof(struct income),1,fp);
+		if(feof(fp))
+			break;
+			if(strcmp(copy,i.a)==0)
+			{
+				flag=1;
+				printf("\nincome source:%s\namount:%.2f",i.a,i.g);
+				return;
+			}
+			if(strcmp(copy,i.b)==0)
+			{
+				flag=1;
+				printf("\nincome source:%s\namount:%.2f",i.b,i.h);
+				return;
+			}
+			if(strcmp(copy,i.c)==0)
+			{
+				flag=1;
+				printf("\nincome source:%s\namount:%.2f",i.c,i.i);
+				return;
+			}
+			if(strcmp(copy,i.d)==0)
+			{
+				flag=1;
+				printf("\nincome source:%s\namount:%.2f",i.d,i.j);
+				return;
+			}
+			if(strcmp(copy,i.e)==0)
+			{
+				flag=1;
+				printf("\nincome source:%s\namount:%.2f",i.e,i.k);
+				return;
+			}
+			if(strcmp(copy,i.f)==0)
+			{
+				flag=1;
+				printf("\nincome source:%s\namount:%.2f",i.f,i.l);
+				return;
+			}
+	}
+	if(flag==0)
+	{
+		printf("\n Income source not found");
+	}
+	fclose(fp);
+}
+//this funcion made for search expence
+void search1()
+{
+	FILE *fp;
+	char copy[20];
+	int flag=0;
+	clrscr();
+	fp=fopen("expence.txt","r");
+	if(fp==NULL)
+	{
+		printf("\nfile is not open");
+		return;
+	}
+	else
+	{
+	     printf("\nEnter the expence source you want to search:");
+	     scanf("%s",copy);
+	}
+	while(1)
+	{
+		fread(&e,sizeof(struct expense),1,fp);
+		if(feof(fp))
+			break;
+			if(strcmp(copy,e.a1)==0)
+			{
+				flag=1;
+				printf("\nexpence source:%s\namount:%.2f",e.a1,e.g1);
+				return;
+			}
+			if(strcmp(copy,e.b1)==0)
+			{
+				flag=1;
+				printf("\expence source:%s\namount:%.2f",e.b1,e.h1);
+				return;
+			}
+			if(strcmp(copy,e.c1)==0)
+			{
+				flag=1;
+				printf("\nexpence source:%s\namount:%.2f",e.c1,e.i1);
+				return;
+			}
+			if(strcmp(copy,e.d1)==0)
+			{
+				flag=1;
+				printf("\nexpence source:%s\namount:%.2f",e.d1,e.j1);
+				return;
+			}
+			if(strcmp(copy,e.e1)==0)
+			{
+				flag=1;
+				printf("\nexpence source:%s\namount:%.2f",e.e1,e.k1);
+				return;
+			}
+			if(strcmp(copy,e.f1)==0)
+			{
+				flag=1;
+				printf("\nexpence source:%s\namount:%.2f",e.f1,e.l1);
+				return;
+			}
+	}
+	if(flag==0)
+	{
+		printf("\n expence source not found");
+	}
+	fclose(fp);
+}
+//this funcion made for delete income source
+void delete_i()
+{
+      FILE *fp,*fp1;
+      int flag=0;
+      char copy[20];
+      fp=fopen("income.txt","r");
+      if(fp==NULL)
+      {
+		printf("\nfile is not open");
+		return;
+      }
+      fp1=fopen("income1.txt","w");
+      if(fp1==NULL)
+      {
+		printf("\nfile is not open");
+		return;
+      }
+      printf("\nEnter the income source you want to delete:");
+      scanf("%s",copy);
+      while(fread(&i,sizeof(struct income),1,fp))
+      {
+		if(strcmp(copy,i.a)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else if(strcmp(copy,i.b)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else if(strcmp(copy,i.c)==0)
+		{
+			flag=1;
+			continue;
+		}
+
+		else if(strcmp(copy,i.d)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else if(strcmp(copy,i.e)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else if(strcmp(copy,i.f)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else
+		{
+			fwrite(&i,sizeof(struct income),1,fp1);
+		}
+      }
+      fclose(fp);
+      fclose(fp1);
+      if(flag==0)
+      {
+		printf("\nIncome source not found");
+      }
+      else
+      {
+		fp=fopen("income.txt","w");
+		if(fp==NULL)
+		{
+			printf("\nFile not open");
+			return;
+		}
+		fp1=fopen("income1.txt","r");
+		if(fp1==NULL)
+		{
+			printf("\nfile is not open");
+			return;
+		}
+		while(fread(&i,sizeof(struct income),1,fp1))
+		{
+			fwrite(&i,sizeof(struct income),1,fp);
+		}
+      }
+      fclose(fp);
+      fclose(fp1);
+
+}
+// this funcion made for delete expence
+void delete_e()
+{
+      FILE *fp,*fp1;
+      struct expense t;
+      int flag=0;
+      char copy[20];
+      fp=fopen("expence.txt","r");
+      if(fp==NULL)
+      {
+		printf("\nfile is not open");
+		return;
+      }
+      fp1=fopen("expence1.txt","w");
+      if(fp1==NULL)
+      {
+		printf("\nfile is not open");
+		return;
+      }
+      printf("\nEnter the expence source you want to delete:");
+      scanf("%s",copy);
+      while(fread(&e,sizeof(struct expense),1,fp))
+      {
+		if(strcmp(copy,e.a1)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else if(strcmp(copy,e.b1)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else if(strcmp(copy,e.c1)==0)
+		{
+			flag=1;
+			continue;
+		}
+
+		else if(strcmp(copy,e.d1)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else if(strcmp(copy,e.e1)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else if(strcmp(copy,e.f1)==0)
+		{
+			flag=1;
+			continue;
+		}
+		else
+		{
+			fwrite(&e,sizeof(struct expense),1,fp1);
+		}
+      }
+      fclose(fp);
+      fclose(fp1);
+      if(flag==0)
+      {
+		printf("\nIncome source not found");
+      }
+      else
+      {
+		fp=fopen("expence.txt","w");
+		if(fp==NULL)
+		{
+			printf("\nFile not open");
+			return;
+		}
+		fp1=fopen("expence1.txt","r");
+		if(fp1==NULL)
+		{
+			printf("\nfile is not open");
+			return;
+		}
+		while(fread(&e,sizeof(struct expense),1,fp1))
+		{
+			fwrite(&e,sizeof(struct expense),1,fp);
+		}
+      }
+      fclose(fp);
+      fclose(fp1);
+}
+void main()
+{
+	int ch,menu;
+	clrscr();
+	ch=choice();
+		switch(ch)
+	{
+		case 1: login();
+			textbackground(2);
+			textcolor(YELLOW);
+			income();
+			clrscr();
+			textbackground(3);
+			textcolor(BLACK);
+			expenses();
+			main();
+			break;
+
+		case 2: append();
+			main();
+			break;
+
+		case 3: clrscr();
+			textbackground(1);
+			textcolor(GREEN);
+			save=in-ex;
+			printie(save);
+			printf("\n\n\t\tChoose menu then Enter 1.");
+			printf("\n\t\texit then choose 2.");
+			printf("\n\t\tEnter your choice:");
+			scanf("%d",&menu);
+			if(menu==1)
+				main();
+			if(menu==2)
+				exit(0);
+			break;
+
+		case 4: search();
+			printf("\n\n\t\tChoose menu then Enter 1.");
+			printf("\n\t\texit then choose 2.");
+			printf("\n\t\tEnter your choice:");
+			scanf("%d",&menu);
+			if(menu==1)
+				main();
+			if(menu==2)
+				exit(0);
+			break;
+
+		case 5:	search1();
+			printf("\n\n\t\tChoose menu then Enter 1.");
+			printf("\n\t\texit then choose 2.");
+			printf("\n\t\tEnter your choice:");
+			scanf("%d",&menu);
+			if(menu==1)
+				main();
+			if(menu==2)
+				exit(0);
+			break;
+
+		case 6:	delete_i();
+			main();
+			break;
+
+		case 7: delete_e();
+			main();
+			break;
+
+		case 8: exit(0);
+			break;
+
+		default:printf("\n\t\t---------------------------------------");
+			printf("\n\t\t|      !!! Only 8 choice valid !!!    |");
+			printf("\n\t\t---------------------------------------");
+	}
+	getch();
+}
